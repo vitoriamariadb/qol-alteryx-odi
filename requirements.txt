@@ -1,0 +1,3 @@
+# Nenhuma dependencia externa necessaria
+# Usando tkinter padrao (incluso no Python)
+# xml.etree.ElementTree, re, pathlib sao built-in
