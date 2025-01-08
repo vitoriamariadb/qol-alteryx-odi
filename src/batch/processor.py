@@ -206,3 +206,4 @@ class BatchProcessor:
 
 
 # "A perfeicao e alcancada nao quando nao ha mais nada a acrescentar, mas quando nao ha mais nada a retirar." - Saint-Exupery
+
