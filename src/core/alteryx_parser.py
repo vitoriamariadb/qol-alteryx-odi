@@ -189,3 +189,4 @@ class AlteryxParser:
 
 
 # "A excelencia nao e um ato, mas um habito." - Aristoteles
+
