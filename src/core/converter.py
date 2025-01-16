@@ -226,3 +226,4 @@ class OdiToAlteryxConverter:
 
 
 # "Medir o que e mensuravel e tornar mensuravel o que nao e." - Galileu Galilei
+
