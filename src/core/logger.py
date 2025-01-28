@@ -139,3 +139,4 @@ class AppLogger:
 
 
 # "Quem controla o passado controla o futuro; quem controla o presente controla o passado." - George Orwell
+
