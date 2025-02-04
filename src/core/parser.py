@@ -85,3 +85,4 @@ class RegexCache:
 
 
 # "O tempo e o recurso mais escasso e, se nao for gerenciado, nada mais pode ser gerenciado." - Peter Drucker
+
