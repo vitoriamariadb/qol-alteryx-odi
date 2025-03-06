@@ -245,3 +245,4 @@ class DocumentationExporter:
 
 
 # "Documentar e explicar o que deveria ser obvio." - Desconhecido
+
