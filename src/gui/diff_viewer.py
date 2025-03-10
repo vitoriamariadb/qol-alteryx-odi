@@ -319,3 +319,4 @@ class DiffViewer(tk.Toplevel):
 
 
 # "A diferenca entre o quase certo e o certo e enorme." - Nassim Taleb
+
