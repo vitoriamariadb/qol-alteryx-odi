@@ -588,3 +588,4 @@ class MainWindow(tk.Tk):
 
 
 # "A interface e o produto." - Jef Raskin
+
