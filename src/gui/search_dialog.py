@@ -361,3 +361,4 @@ class SearchReplaceDialog(tk.Toplevel):
 
 
 # "Buscar e a natureza do espirito." - Blaise Pascal
+
