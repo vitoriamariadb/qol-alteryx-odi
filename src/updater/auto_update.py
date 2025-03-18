@@ -229,3 +229,4 @@ class AutoUpdater:
 
 
 # "Nao tenha medo de melhorar lentamente, tenha medo de ficar parado." - Proverbio chines
+
