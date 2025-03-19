@@ -183,3 +183,4 @@ class TestAlteryxParser:
 
 
 # "Testa cedo, testa frequentemente." - Kent Beck
+
