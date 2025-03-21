@@ -245,3 +245,4 @@ class TestToolStepMapping:
         assert "DataStoreCommand" in STEP_TO_TOOL_MAP
 
 # "O valor de um teste e inversamente proporcional ao numero de bugs que ele deixa passar." - Boris Beizer
+
