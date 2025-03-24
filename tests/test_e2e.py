@@ -266,3 +266,4 @@ class TestEndToEndCLI:
 
 
 # "Nao e suficiente fazer o seu melhor; primeiro voce precisa saber o que fazer, e entao fazer o seu melhor." - W. Edwards Deming
+
