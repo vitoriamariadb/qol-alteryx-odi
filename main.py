@@ -3,22 +3,17 @@
 QoL Alteryx-ODI Tools
 Main entry point - Orchestrator
 """
-import logging
-import sys
 from pathlib import Path
 
+from src.core.logger import AppLogger
 from src.core.xml_processor import process_template, get_output_filename
 from src.gui.main_window import MainWindow
 
 ROOT_DIR = Path(__file__).parent
 OUTPUT_DIR = ROOT_DIR / "output"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.StreamHandler(sys.stdout)],
-)
-logger = logging.getLogger(__name__)
+AppLogger.setup(log_dir=ROOT_DIR / "logs")
+logger = AppLogger.get_logger(__name__)
 
 
 def main() -> None:

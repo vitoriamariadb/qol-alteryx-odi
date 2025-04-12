@@ -10,6 +10,8 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 from typing import Callable, Optional
 
+from src.core.logger import AppLogger
+
 logger = logging.getLogger(__name__)
 
 DRACULA_BG = "#282a36"
@@ -46,6 +48,7 @@ class MainWindow(tk.Tk):
         self._log_messages: list[str] = []
 
         self._setup_logs_folder()
+        AppLogger.setup(log_dir=self.logs_dir)
         self._setup_styles()
         self._setup_ui()
         logger.info("Interface inicializada")
