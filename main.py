@@ -5,6 +5,7 @@ Main entry point - Orchestrator
 """
 from pathlib import Path
 
+from src.cli import run_cli
 from src.core.logger import AppLogger
 from src.core.xml_processor import process_template, get_output_filename
 from src.gui.main_window import MainWindow
@@ -151,6 +152,10 @@ def _convert_odi_to_alteryx(app: MainWindow, input_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 1 and not sys.argv[1].startswith("--gui"):
+        sys.exit(run_cli())
+    else:
+        main()
 
 # "O inicio e a parte mais importante do trabalho." - Platao
