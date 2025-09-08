@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.1">
+  <Properties>
+    <MetaInfo>
+      <Name>SampleWorkflow</Name>
+      <Description>Workflow de teste para integracao</Description>
+    </MetaInfo>
+  </Properties>
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="100" y="200"/>
+      </GuiSettings>
+      <Configuration>
+        <File>dados_entrada.csv</File>
+      </Configuration>
+      <Annotation>
+        <DefaultAnnotationText>Leitura CSV</DefaultAnnotationText>
+      </Annotation>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="300" y="200"/>
+      </GuiSettings>
+      <Configuration>
+        <Expression>[Status] = "Ativo"</Expression>
+      </Configuration>
+      <Annotation>
+        <DefaultAnnotationText>Filtro Status</DefaultAnnotationText>
+      </Annotation>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="500" y="200"/>
+      </GuiSettings>
+      <Configuration>
+        <FormulaField>[DataRef] = "2024-06-15"</FormulaField>
+      </Configuration>
+      <Annotation>
+        <DefaultAnnotationText>Formula Data</DefaultAnnotationText>
+      </Annotation>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="700" y="200"/>
+      </GuiSettings>
+      <Configuration>
+        <File>resultado.csv</File>
+      </Configuration>
+      <Annotation>
+        <DefaultAnnotationText>Saida CSV</DefaultAnnotationText>
+      </Annotation>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output"/>
+      <Destination ToolID="2" Connection="Input"/>
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="True"/>
+      <Destination ToolID="3" Connection="Input"/>
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output"/>
+      <Destination ToolID="4" Connection="Input"/>
+    </Connection>
+  </Connections>
+</AlteryxDocument>
