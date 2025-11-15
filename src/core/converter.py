@@ -11,6 +11,7 @@ from xml.etree import ElementTree as ET
 
 from src.core.alteryx_parser import AlteryxParser, AlteryxWorkflow
 from src.core.odi_parser import OdiParser, OdiPackage
+from src.core.parser import RegexCache
 
 logger = logging.getLogger(__name__)
 
@@ -32,6 +33,9 @@ STEP_TO_TOOL_MAP = {
     "OdiCommand": "AlteryxBasePluginsGui.RunCommand.RunCommand",
     "VariableStep": "AlteryxBasePluginsGui.Formula.Formula",
 }
+
+_KNOWN_TOOL_PLUGINS = frozenset(TOOL_TO_STEP_MAP.keys())
+_KNOWN_STEP_TYPES = frozenset(STEP_TO_TOOL_MAP.keys())
 
 
 @dataclass

@@ -9,7 +9,11 @@ from pathlib import Path
 from typing import Callable, Optional, Tuple
 from xml.etree import ElementTree as ET
 
+from src.core.parser import RegexCache
+
 logger = logging.getLogger(__name__)
+
+_regex_cache = RegexCache()
 
 
 RULES: dict[str, dict] = {
@@ -75,7 +79,7 @@ def replace_dates_in_text(text: str, target_year: int, target_month: int) -> Tup
         count += 1
         return f"{target_year:04d}-{target_month:02d}-01"
 
-    text = re.sub(r"\d{4}-\d{2}-\d{2}", _replace_yyyy_mm_dd, text)
+    text = _regex_cache.get_compiled("YYYY_MM_DD").sub(_replace_yyyy_mm_dd, text)
 
     def _replace_yyyy_mm(m: re.Match) -> str:
         nonlocal count
@@ -85,14 +89,14 @@ def replace_dates_in_text(text: str, target_year: int, target_month: int) -> Tup
         count += 1
         return f"{target_year:04d}-{target_month:02d}"
 
-    text = re.sub(r"\d{4}-\d{2}(?!-\d)", _replace_yyyy_mm, text)
+    text = _regex_cache.get_compiled("YYYY_MM").sub(_replace_yyyy_mm, text)
 
     def _replace_dd_mm_yyyy(m: re.Match) -> str:
         nonlocal count
         count += 1
         return f"01/{target_month:02d}/{target_year:04d}"
 
-    text = re.sub(r"\d{2}/\d{2}/\d{4}", _replace_dd_mm_yyyy, text)
+    text = _regex_cache.get_compiled("DD_MM_YYYY").sub(_replace_dd_mm_yyyy, text)
 
     def _replace_mm_yyyy_slash(m: re.Match) -> str:
         nonlocal count
@@ -103,7 +107,7 @@ def replace_dates_in_text(text: str, target_year: int, target_month: int) -> Tup
             return f"{target_month:02d}/{target_year:04d}"
         return m.group(0)
 
-    text = re.sub(r"(?<!\d)(\d{2})/(\d{4})(?!\d)", _replace_mm_yyyy_slash, text)
+    text = _regex_cache.get_compiled("MM_YYYY_SLASH").sub(_replace_mm_yyyy_slash, text)
 
     def _replace_mm_yyyy_dash(m: re.Match) -> str:
         nonlocal count
@@ -114,7 +118,7 @@ def replace_dates_in_text(text: str, target_year: int, target_month: int) -> Tup
             return f"{target_month:02d}-{target_year:04d}"
         return m.group(0)
 
-    text = re.sub(r"(?<!\d)(\d{2})-(\d{4})(?!\d)", _replace_mm_yyyy_dash, text)
+    text = _regex_cache.get_compiled("MM_YYYY_DASH").sub(_replace_mm_yyyy_dash, text)
 
     return text, count
 
