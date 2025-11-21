@@ -56,7 +56,7 @@ def find_node_by_tool_id(root: ET.Element, tool_id: str) -> Optional[ET.Element]
     return None
 
 
-def find_nodes_by_annotation_text(root: ET.Element, annotation_text: str) -> list[ET.Element]:
+def find_nodes_by_annotation_text(root: ET.Element, annotation_text: str, *, case_sensitive: bool = True) -> list[ET.Element]:
     """Encontra todos os nodes que contem texto de anotacao especificado."""
     matching: list[ET.Element] = []
     for node in root.iter("Node"):
