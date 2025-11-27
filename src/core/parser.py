@@ -60,7 +60,10 @@ class RegexCache:
         return self._cache[key]
 
     def has_pattern(self, key: str) -> bool:
-        """Verifica se um padrao existe no cache."""
+        """Verifica se um padrao existe no cache.
+
+        Retorna True se a chave estiver registrada, independente do estado do padrao.
+        """
         return key in self._cache
 
     def clear_cache(self) -> None:
