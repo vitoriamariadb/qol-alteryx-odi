@@ -34,6 +34,7 @@ _LEVEL_COLORS: dict[int, str] = {
 }
 _RESET = "\033[0m"
 
+
 LOG_FORMAT = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
 MAX_BYTES = 5 * 1024 * 1024
 BACKUP_COUNT = 3
