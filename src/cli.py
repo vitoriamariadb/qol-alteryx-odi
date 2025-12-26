@@ -105,7 +105,10 @@ def _add_batch_command(subparsers: argparse._SubParsersAction) -> None:
 
 
 def _run_parse(args: argparse.Namespace) -> int:
-    """Executa subcomando parse."""
+    """Executa subcomando parse.
+
+    Detecta o tipo de arquivo pela extensao e delega ao parser apropriado.
+    """
     filepath = args.filepath
     suffix = filepath.suffix.lower()
 
