@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Alteryx Parser Module
 Parsing de arquivos de workflow Alteryx (.yxmd) em formato XML.
