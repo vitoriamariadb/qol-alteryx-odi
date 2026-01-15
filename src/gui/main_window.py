@@ -295,7 +295,7 @@ class MainWindow(tk.Tk):
     def _generate_month_options(self) -> list[str]:
         """Gera lista de opcoes MM/YYYY de Jan 2022 ate Dez do proximo ano."""
         options: list[str] = []
-        current_year = datetime.now().year
+        current_year: int = datetime.now().year
         end_year = current_year + 1
         for year in range(2022, end_year + 1):
             for month in range(1, 13):
