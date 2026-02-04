@@ -46,7 +46,7 @@ class ConversionResult:
     xml_content: str = ""
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
-    stats: dict = field(default_factory=dict)
+    stats: dict[str, int] = field(default_factory=dict)
 
 
 class AlteryxToOdiConverter:
