@@ -137,7 +137,10 @@ class TestEndToEndAlteryx:
         assert len(steps) == 3
 
     def test_template_processing(self, tmp_path: Path) -> None:
-        """Verifica processamento de template com datas."""
+        """Verifica processamento de template com datas.
+
+        Valida que o processor aplica substituicoes sem corromper o XML.
+        """
         from src.core.xml_processor import process_template
 
         template_content = SAMPLE_ALTERYX_XML
