@@ -262,4 +262,4 @@ def get_output_filename(input_filename: str) -> str:
     return FILE_MAPPING.get(input_filename, input_filename.replace(".yxmd", ""))
 
 
-# "A natureza nao faz nada em vao." - Aristoteles
+# "A simplicidade e a sofisticacao suprema." - Leonardo da Vinci
