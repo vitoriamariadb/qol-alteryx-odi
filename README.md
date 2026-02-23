@@ -9,29 +9,29 @@
 
 ---
 
-### Descricao
+### Descrição
 
-Ferramenta Python com interface grafica (Tkinter) para parsing, conversao e manipulacao
+Ferramenta Python com interface gráfica (Tkinter) para parsing, conversão e manipulação
 de workflows Alteryx (.yxmd) e packages ODI em formato XML. Permite processamento
-cirurgico de templates, validacao de regras, comparacao de arquivos e exportacao de
-documentacao automatica.
+cirúrgico de templates, validação de regras, comparação de arquivos e exportação de
+documentação automática.
 
 ---
 
 ### Funcionalidades
 
-- **Parser Alteryx**: Extrai metadados de workflows .yxmd (nodes, conexoes, propriedades)
+- **Parser Alteryx**: Extrai metadados de workflows .yxmd (nodes, conexões, propriedades)
 - **Parser ODI**: Extrai metadados de packages ODI XML (steps, scenarios, interfaces)
 - **Conversor Bidirecional**: Converte entre formatos Alteryx e ODI
-- **Processamento de Template**: Substituicao cirurgica de datas e servidores em XML
-- **Validacao de Workflows**: Verifica integridade, nodes orfaos, datas hardcoded
-- **Diff Viewer**: Comparacao side-by-side de arquivos XML
-- **Busca e Substituicao**: Busca com texto simples ou regex em conteudo XML
-- **Processamento em Lote**: Processa multiplos arquivos de uma vez
-- **Exportacao de Documentacao**: Gera docs Markdown automaticos
-- **Auto Update**: Verificacao de novas versoes
+- **Processamento de Template**: Substituição cirúrgica de datas e servidores em XML
+- **Validação de Workflows**: Verifica integridade, nodes órfãos, datas hardcoded
+- **Diff Viewer**: Comparação side-by-side de arquivos XML
+- **Busca e Substituição**: Busca com texto simples ou regex em conteúdo XML
+- **Processamento em Lote**: Processa múltiplos arquivos de uma vez
+- **Exportação de Documentação**: Gera docs Markdown automáticos
+- **Auto Update**: Verificação de novas versões
 
-### Padroes de Data Suportados
+### Padrões de Data Suportados
 
 | Formato | Exemplo |
 |---------|---------|
@@ -42,7 +42,7 @@ documentacao automatica.
 
 ---
 
-### Instalacao e Uso
+### Instalação e Uso
 
 #### Linux
 
@@ -72,29 +72,29 @@ src/
     workflow_extractor.py  # Extrator de metadados Alteryx
     package_extractor.py   # Extrator de metadados ODI
     converter.py           # Conversor bidirecional Alteryx/ODI
-    xml_processor.py       # Processamento cirurgico de XML
-    validation.py          # Regras de validacao
+    xml_processor.py       # Processamento cirúrgico de XML
+    validation.py          # Regras de validação
   gui/
     main_window.py         # Interface principal Tkinter (tema Dracula)
     diff_viewer.py         # Visualizador side-by-side de diffs
-    search_dialog.py       # Dialogo de busca e substituicao
+    search_dialog.py       # Diálogo de busca e substituição
   exporters/
-    doc_exporter.py        # Exportacao de documentacao Markdown
+    doc_exporter.py        # Exportação de documentação Markdown
   batch/
     processor.py           # Processamento em lote
   updater/
-    auto_update.py         # Verificacao de atualizacoes
+    auto_update.py         # Verificação de atualizações
 tests/
   test_alteryx_parser.py   # Testes do parser Alteryx
   test_odi_parser.py       # Testes do parser ODI
   test_converter.py        # Testes do conversor
 docs/
-  user_guide.md            # Guia do usuario
+  user_guide.md            # Guia do usuário
   tutorials.md             # Tutoriais detalhados
 ```
 
 ---
 
-### Licenca
+### Licença
 
-Este projeto esta licenciado sob a GPLv3 - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a GPLv3 - veja o arquivo [LICENSE](LICENSE) para detalhes.
